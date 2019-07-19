@@ -1,0 +1,108 @@
+<form>
+  
+        <div class="row">
+            <div class="col-md-3 col-xs-12 pull-right"> 
+                <button input (click)="addPhysician()" type="button" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+            </div>
+            </div>
+      <div class="row">
+        <div class="col-md-4 col-xs-12 form-group">
+      <!--<div style="color: red">  {{errlst}}</div>-->
+        <label for="lastName">LastName</label>
+        <input required [(ngModel)]="signobj.lname" id="lname"type="text"class="form-control"placeholder="Enter Last Name"class="form-control"[ngModelOptions]="{standalone: true}">
+        </div>
+     
+        <div class="col-md-4 col-xs-12 form-group">
+            <div style="color: red">{{errorFirstName}}</div>
+            <label for="fname">First Name</label>
+            <input required [(ngModel)]="signobj.fname" id="fname"type="text"class="form-control"placeholder="Enter Last Name"class="form-control"[ngModelOptions]="{standalone: true}">
+        </div>
+    </div>
+     
+  
+      <div class="row">
+        <div class="col-md-6 col-xs-12 form-group">
+            <div style="color: red">{{errorAddress1}}</div>
+            <label for="addressLine1">AddressLine1</label>
+            <input required [(ngModel)]="signobj.address1" id="address1"type="text"class="form-control"placeholder="Enter Address Line1"class="form-control"[ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="col-md-6 col-xs-12 form-group">
+            <label for="addressLine2">AddressLine2</label>
+            <input required [(ngModel)]="signobj.address2" id="address2"type="text"class="form-control"placeholder="Enter Address Line2"class="form-control"[ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4 col-xs-12 form-group">
+            <div style="color: red">{{errorCellPhone}}</div>
+            <label for="cnumber">Cell Phone</label>
+            <input required [(ngModel)]="signobj.cnumber"  id="cnumber"type="tel"class="form-control"placeholder="Enter Cellphone Number"class="form-control"[ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+  
+        <div class="row">
+          <div class="col-md-6 col-xs-12 form-group">
+              <div style="color: red">{{errorEmail}}</div>
+              <label for="email">Email</label>
+              <input required [(ngModel)]="signobj.email" id="email"type="email" class="form-control" required placeholder="Enter Email"class="form-control"[ngModelOptions]="{standalone: true}" >
+          </div>
+        
+        </div>
+  
+ 
+  
+      <div class="row">
+  
+          <div class="col-md-3 col-xs-12 pull-right"> 
+              <button input (click)= "addPhysician()" type="button" class="btn btn-success">Submit</button>
+              <button type="reset" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+            </div>
+  
+         
+  
+      </div>
+  
+      <table>
+
+        <thead>
+
+        <th>FIRST NAME</th>
+
+        <th>LAST NAME</th>
+
+        <th>ADDRESS</th>
+
+        <th>CONTACT NUMBER</th>
+
+        <th>EMAIL</th>
+
+        </thead>
+
+
+
+        <tbody>
+
+        <tr *ngFor="let serv of signupList">
+
+        <td>{{serv.fname}}</td>
+
+        <td>{{serv.lname}}</td>
+
+        <td>{{serv.address1}}</td>
+
+         <td>{{serv.address2}}</td>
+
+        <td>{{serv.cnumber}}</td>
+
+        <td>{{serv.email}}</td>
+
+        </tr>
+
+        </tbody>
+
+
+
+ </table>
+  
+  </form>
